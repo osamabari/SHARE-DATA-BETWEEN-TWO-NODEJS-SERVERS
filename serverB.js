@@ -28,13 +28,11 @@ var server = net.createServer(function (conn) {
         
         if (data.M === 'updateSummaryState') {
           var arr=[];
-          //data.A.forEach(function(data_for) {
-            //console.log(data_for.Deltass);
+          data.A.forEach(function(data_for) {
             data.A[0].Deltas.forEach(function(marketsDelta) {
-            // console.log('Ticker Update for '+ marketsDelta.MarketName, marketsDelta);
              arr.push({name:marketsDelta.MarketName,price:marketsDelta.High});
             });
-          //});
+          });
           //sending data to the another server
           conn.write(JSON.stringify({response:arr}))
         }
