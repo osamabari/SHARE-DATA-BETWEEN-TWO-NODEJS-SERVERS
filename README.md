@@ -2,7 +2,7 @@
 > using node moules `net`
 
 # Setup
-- `npm install'
+- `npm install`
 - first of start SERVER B
 - `node serverB`
 - then start SERVER A
